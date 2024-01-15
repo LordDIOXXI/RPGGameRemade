@@ -46,7 +46,7 @@ public class Character {
         setHitPoints();
     }
 
-    //Set hitpoints equal to 20 + the constitution modifier
+    //Set hitPoints equal to 20 + the constitution modifier
     private void setHitPoints(){
         this.hitPoints = 20 + conMod;
     }
