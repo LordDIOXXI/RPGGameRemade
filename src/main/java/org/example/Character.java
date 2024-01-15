@@ -11,7 +11,7 @@ public class Character {
     private String name;
     Random rand = new Random();
 
-    //character constructor
+    //character Constructor
     public Character(){
         name=null;
         hitPoints=0;
@@ -31,25 +31,24 @@ public class Character {
 
     //Random number generator for stat rolling
     private int randomStat(){
-        int stat=rand.nextInt(20);
-        return stat;
+        return rand.nextInt(20)+1;
+    }
+
+    //Set Stats for character class
+    public void createCharacter(){
+        this.str = randomStat();
+        this.dex = randomStat();
+        this.con = randomStat();
+        this.intel = randomStat();
+        this.wis = randomStat();
+        this.cha = randomStat();
+        modSet();
+        setHitPoints();
     }
 
     //Set hitpoints equal to 20 + the constitution modifier
     private void setHitPoints(){
         this.hitPoints = 20 + conMod;
-    }
-
-    //Set Stats for character class
-    public void createCharacter(){
-        this.str = randomStat()+1;
-        this.dex = randomStat()+1;
-        this.con = randomStat()+1;
-        this.intel = randomStat()+1;
-        this.wis = randomStat()+1;
-        this.cha = randomStat()+1;
-        modSet();
-        setHitPoints();
     }
 
     //Doest the math to set the correct modifier for each stat
