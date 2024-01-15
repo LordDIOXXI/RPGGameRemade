@@ -2,6 +2,8 @@ package org.example;
 
 import java.util.Random;
 
+import static java.lang.Math.floorDiv;
+
 public class Character {
 
     //Instantiate variables
@@ -52,7 +54,7 @@ public class Character {
 
     //Doest the math to set the correct modifier for each stat
     private int tempModMath(int mod){
-        double tempStatMod = Math.floorDiv(mod - 10, 2);
+        double tempStatMod = floorDiv(mod - 10, 2);
         return (int)tempStatMod;
     }
 
