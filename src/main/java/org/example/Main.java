@@ -4,12 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        //Initialize character for play
         Character player = new Character();
         //Equipment equipment = new Equipment();
-        //Initialize character for play
-
-        player.createCharacter();
 
         //Set name
         System.out.print("Please enter your character's name: ");

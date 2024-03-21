@@ -1,7 +1,5 @@
 package org.example;
-
 import java.util.Random;
-
 import static java.lang.Math.floorDiv;
 
 public class Character {
@@ -12,30 +10,7 @@ public class Character {
     Random rand = new Random();
 
     //character Constructor
-    public Character(){
-        name=null;
-        hitPoints=0;
-        str=10;
-        dex=10;
-        con=10;
-        intel=10;
-        wis=10;
-        cha=10;
-        strMod=0;
-        dexMod=0;
-        conMod=0;
-        intMod=0;
-        wisMod=0;
-        chaMod=0;
-    }
-
-    //Random number generator for stat rolling
-    private int randomStat(){
-        return rand.nextInt(20)+1;
-    }
-
-    //Set Stats for character class
-    public void createCharacter(){
+    protected Character(){
         this.str = randomStat();
         this.dex = randomStat();
         this.con = randomStat();
@@ -44,6 +19,11 @@ public class Character {
         this.cha = randomStat();
         modSet();
         setHitPoints();
+    }
+
+    //Random number generator for stat rolling
+    private int randomStat(){
+        return rand.nextInt(20)+1;
     }
 
     //Set hitPoints equal to 20 + the constitution modifier
@@ -59,7 +39,6 @@ public class Character {
 
     //Set stat modifiers
     private void modSet(){
-
         this.strMod = tempModMath(str);
         this.dexMod= tempModMath(dex);
         this.conMod= tempModMath(con);
